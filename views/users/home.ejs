@@ -1,0 +1,29 @@
+<%- include('../layouts/header.ejs')%>
+<div style="display: flex; flex-direction: column;">
+    <div style="width: 50%;"><h1>HOME</h1></div>
+<br>
+<div>
+    <table width="500%">
+        <tr>
+            <td>Name</td>
+            <td><%=user.name%></td>
+            </tr>
+            <tr>
+            <td>mobile </td>
+            <td><%=user.mobile%></td>
+            </tr>
+        <tr>
+            <td>verified</td>
+            <td> yes </td>   
+         </tr>
+    </table>
+</div>
+<!-- <div><a href="/logout">logout</a></div> -->
+<div>
+    <button onclick="location.href='/logout'" >Logout</button>
+</div>
+</div>
+
+<br><br>
+<%- include('../layouts/footer.ejs')%> 
+

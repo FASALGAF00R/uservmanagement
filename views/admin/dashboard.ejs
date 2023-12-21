@@ -1,0 +1,49 @@
+<%- include("../layouts/header.ejs")%>
+<div class="container">
+    <h1>Dashboard</h1>
+
+    <a href="/admin/new-user" class="btn btn-primary">Add New User</a>
+
+    <br><br>
+
+    <form method="GET" action="/admin/dashboard">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search username, email, mobile" name="Search" style="width: 60%;">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(users.length > 0) {
+          for(let i = 0; i < users.length; i++) { %>
+            <tr>
+              <td><%= users[i].name %></td>
+              <td><%= users[i].email %></td>
+              <td><%= users[i].mobile %></td>
+              <td>
+                <a href="/admin/edit-user?id=<%= users[i]._id %>" class="btn btn-primary">Edit</a>
+                <a href="/admin/delete-user?id=<%= users[i]._id %>" class="btn btn-danger">Delete</a>
+              </td>
+            </tr>
+        <% } } else { %>
+          <tr>
+            <td colspan="4">Users not found</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <a href="/admin/home" class="btn btn-primary">Go to Home</a>
+  </div>
+<%-include("../layouts/footer.ejs")%>

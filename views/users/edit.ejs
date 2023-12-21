@@ -1,0 +1,16 @@
+<% include('../layouts/header.ejs')%> 
+
+<form action="" method="POST" >
+
+
+<input type="hidden" name="userId" value="<%= user._id%>" />
+
+<input type="text" name="name" value="<%= user.name %>" placeholder="enter name" required/>
+<br><br>
+<input type="email"name="email" value="<%= user.email%>" placeholder="enter your mail" required/>
+<br><br>
+<input type="text"name="mno" value="<%= user.mobile%>" placeholder="enter your mobile" required/>
+
+<input type="submit" value="update profile">
+</form>
+<% include('../layouts/footer.ejs')%> 
