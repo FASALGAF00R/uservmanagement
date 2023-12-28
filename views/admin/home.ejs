@@ -1,23 +1,77 @@
 
 <%- include ("../layouts/header.ejs") %>
+<style>
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.admin-profile {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 3px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
 <div class="container">
-    <div class="container">
-        <h1>Welcome <%= admin.name %></h1>
-    
-        <a href="/admin/dashboard" class="btn btn-primary">Dashboard</a>
-    
-        <table class="table" style="width: 50%;">
+  <header>
+      <h2>Admin Home</h2>
+  </header>
+  <div class="admin-profile">
+      <h1>Welcome <%= admin.name %></h1>
+
+      <a href="/admin/dashboard" class="btn btn-primary">Dashboard</a>
+
+      <table class="table">
           <tr>
-            <td>Email</td>
-            <td><%= admin.email %></td>
+              <td>Email</td>
+              <td><%= admin.email %></td>
           </tr>
           <tr>
-            <td>Mobile</td>
-            <td><%= admin.mobile %></td>
+              <td>Mobile</td>
+              <td><%= admin.mobile %></td>
           </tr>
-        </table>
-    
-        <a href="/admin/logout" class="btn btn-primary">Logout</a>
-      </div>
+      </table>
+
+      <a href="/admin/logout" class="btn btn-danger">Logout</a>
+  </div>
+</div>
 <%- include ("../layouts/footer.ejs") %>

@@ -65,7 +65,7 @@ const verifylogin = async (req, res) => {
                 }
 
             } else {
-                res.render('login', { message: "email and password is incorrect" });
+                res.render('login', { message: " not found" });
             }
         }
         else {
